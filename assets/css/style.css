@@ -92,11 +92,14 @@
 
 li { list-style: none; }
 
+textarea {resize: none;}
+
 a,
 img,
 span,
 input,
 button,
+textarea,
 ion-icon { display: block; }
 
 a {
@@ -107,13 +110,15 @@ a {
 img { height: auto; }
 
 input,
+textarea,
 button {
   background: none;
   border: none;
   font: inherit;
 }
 
-input {
+input,
+textarea {
   width: 100%;
   outline: none;
 }
@@ -191,7 +196,7 @@ body.active { overflow: hidden; }
   max-width: 400px;
 }
 
-.newsletter-form .email-field {
+.newsletter-form .text-field {
   background-color: var(--cultured);
   color: inherit;
   padding: 14px 20px;
@@ -199,13 +204,25 @@ body.active { overflow: hidden; }
   border-radius: var(--radius-pill);
 }
 
-.newsletter-form .email-field:focus { background-color: var(--gainsboro); }
+.message-field {
+  background-color: var(--cultured);
+  color: inherit;
+  padding: 140px 33px;
+  padding-inline-end: 10px;
+  border-radius: 40px;
+  padding-top: 20px;
+}
 
-.newsletter-form .email-field::placeholder { color: var(--eerie-black_60); }
+.message-field:focus { background-color: var(--gainsboro); }
+
+.message-field::placeholder { color: var(--eerie-black_60); }
+
+.newsletter-form .text-field:focus { background-color: var(--gainsboro); }
+
+.newsletter-form .text-field::placeholder { color: var(--eerie-black_60); }
 
 .newsletter-form .btn {
   position: absolute;
-  top: 0;
   right: 0;
   bottom: 0;
 }
@@ -219,6 +236,7 @@ body.active { overflow: hidden; }
   padding: 11px 25px;
   border-radius: var(--radius-pill);
   transition: var(--transition-1);
+  margin-block: 7px;
 }
 
 .btn:is(:hover, :focus) { background-color: var(--blue-ryb); }
@@ -654,9 +672,14 @@ body.active { overflow: hidden; }
   .newsletter-form,
   .btn { --fs-6: 2.2rem; }
 
-  .newsletter-form .email-field {
+  .newsletter-form .text-field{
     font-size: var(--fs-6);
-    padding-inline-end: 170px;
+    padding-inline-end: 50px;
+  }
+
+  .message-field{
+    font-size: var(--fs-6);
+    padding-inline-end: 37px;
   }
 
   .btn { padding: 14px 30px; }
@@ -879,9 +902,9 @@ body.active { overflow: hidden; }
     padding: 18px 36px;
   }
 
-  .newsletter-form { max-width: 450px; }
+  .newsletter-form { max-width: 700px; min-width: 500px; }
 
-  .newsletter-form .email-field {
+  .newsletter-form .text-field .message-field {
     padding-block: 18px;
     padding-inline-start: 30px;
   }
